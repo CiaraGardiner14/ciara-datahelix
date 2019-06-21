@@ -9,16 +9,10 @@ jobs:
       # If changing build tools be sure to update GeneratorSetup.md in docs
       - run: gradle fatJar :output:test :profile:test :generator:test :common:test :orchestrator:test
       - run:
-          name: Save test results
-          command: |
-            mkdir -p ~/test-results/junit/
-            find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/test-results/junit/ \;
-          when: always
-      - run:
           name: Save jar
           command: |
             mkdir -p ~/artifacts/
-            find . -type f -regex "/root/orchestrator/build/libs/generator.jar" -exec cp {} ~/artifacts/ \;
+            find . -type f -regex ".*/build/libs/generator.jar" -exec cp {} ~/artifacts/ \;
           when: always
       - store_test_results:
           path: ~/test-results
