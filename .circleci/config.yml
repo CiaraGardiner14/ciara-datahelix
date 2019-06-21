@@ -18,7 +18,7 @@ jobs:
           name: Save jar
           command: |
             mkdir -p ~/artifacts/
-            cp ./generator/build/libs/generator.jar ~/artifacts/ \;
+            cp ./generator/build/libs/generator.jar ~/artifacts/ \
           when: always
       - store_test_results:
           path: ~/test-results
