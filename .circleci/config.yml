@@ -21,7 +21,7 @@ jobs:
             cp ./generator/build/libs/generator.jar ~/artifacts/ \
           when: always
       - store_artifacts:
-          path: ~/generator.jar
+          path: ~/artifacts/generator.jar
       # This is where you need to aff the line to output the jar to another github repo
 
   release:
