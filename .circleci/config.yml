@@ -20,10 +20,8 @@ jobs:
             mkdir -p ~/artifacts/
             cp ./generator/build/libs/generator.jar ~/artifacts/ \
           when: always
-      - store_test_results:
-          path: ~/test-results
       - store_artifacts:
-          path: ~/test-results/junit
+          path: ~/generator.jar
       # This is where you need to aff the line to output the jar to another github repo
 
   release:
