@@ -1,5 +1,4 @@
 version: 2.1
-
 jobs:
 
   build:
@@ -25,10 +24,6 @@ jobs:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
-      - codecov/upload:
-          file: schemas/target/jacoco-reports/jacoco.xml
-      - codecov/upload:
-          file: generator/target/jacoco-reports/jacoco.xml
       # This is where you need to aff the line to output the jar to another github repo
 
   release:
