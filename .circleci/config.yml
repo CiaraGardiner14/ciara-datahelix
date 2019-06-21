@@ -9,12 +9,6 @@ jobs:
       # If changing build tools be sure to update GeneratorSetup.md in docs
       - run: gradle fatJar :output:test :profile:test :generator:test :common:test :orchestrator:test
       - run:
-          name: test
-          command: find . -type f -regex ".*/build/.*";
-      - run:
-          name: test2
-          command: pwd;
-      - run:
           name: Save jar
           command: |
             mkdir -p ~/artifacts/
