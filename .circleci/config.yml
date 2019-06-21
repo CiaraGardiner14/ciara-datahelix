@@ -1,6 +1,5 @@
 version: 2.1
-orbs:
-  codecov: codecov/codecov@1.0.2
+
 jobs:
 
   build:
@@ -30,6 +29,7 @@ jobs:
           file: schemas/target/jacoco-reports/jacoco.xml
       - codecov/upload:
           file: generator/target/jacoco-reports/jacoco.xml
+      # This is where you need to aff the line to output the jar to another github repo
 
   release:
     docker:
