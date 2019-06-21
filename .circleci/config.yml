@@ -10,7 +10,10 @@ jobs:
       - run: gradle fatJar :output:test :profile:test :generator:test :common:test :orchestrator:test
       - run:
           name: test
-          command: ls -l;
+          command: | 
+            ls -l 
+            cd gradlew
+            ls -l;
       - run:
           name: test2
           command: pwd;
